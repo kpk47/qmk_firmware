@@ -3,10 +3,10 @@
 #ifdef ZELDA_TREASURE
 #undef ZELDA_TREASURE
 #define ZELDA_TREASURE \
-    Q__NOTE(_A4), \
-    Q__NOTE(_AS4), \
-    Q__NOTE(_B4), \
-    HD_NOTE(_C5), \
+    Q__NOTE(_A6), \
+    Q__NOTE(_AS6), \
+    Q__NOTE(_B6), \
+    HD_NOTE(_C7), \
       
 #endif
       
@@ -14,10 +14,10 @@
     #define STARTUP_SONG SONG(PREONIC_SOUND)
 // #define STARTUP_SONG SONG(NO_SOUND)
 
-    #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-                                  SONG(COLEMAK_SOUND), \
-                                  SONG(DVORAK_SOUND), \
-                                  SONG(ZELDA_TREASURE) \
+    #define DEFAULT_LAYER_SONGS { SONG(DVORAK_SOUND), \
+                                  SONG(ZELDA_TREASURE),	\
+                                  SONG(QWERTY_SOUND), \
+                                  SONG(COLEMAK_SOUND) \
                                 }
 #endif
 
@@ -44,4 +44,7 @@
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
 
-#define USB_MAX_POWER_CONSUMPTION 250
+#ifdef USB_MAX_POWER_CONSUMPTION
+#undef USB_MAX_POWER_CONSUMPTION
+#endif
+#define USB_MAX_POWER_CONSUMPTION 500
